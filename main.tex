@@ -1,0 +1,135 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass[line]{res}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{helvetica}
+\usepackage{cite}
+\usepackage{biblatex}
+\addbibresource{cite.bib}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+
+\topmargin=-0.6in
+
+\setlength{\sectionskip}{0.145in}
+\newcolumntype{s}{>{\hsize=.6\hsize}X}
+\newcolumntype{b}{X}
+\newcolumntype{d}{>{\hsize=.5\hsize}X}
+
+\setlength{\textheight}{10.5in} % increase text height to fit resume on 1 page
+\begin{document}  
+\name{M. Fatih BAKIR}
+
+\title{CV}
+
+\address{768 Cypress Walk Apt A Goleta, CA 93117 \\ 805 886 2591}
+\address{\texttt{\href{mailto:mfatihbakir@gmail.com}{mfatihbakir@gmail.com}} \\\texttt{\href{http://fatihbakir.net/}{fatihbakir.net}} \\  \texttt{\href{https://github.com/FatihBAKIR}{github.com/FatihBAKIR}}}
+                           
+\begin{resume}                        
+
+\section{EDUCATION} 
+  University of California, Santa Barbara \\
+  PhD, Computer Science, Sep 2017 - June 2022 \\
+  GPA: 4.00
+  
+  Middle East Technical University, Ankara, Turkey \\
+  BSc, Computer Science, Sep 2013 - June 2017 \\
+  GPA: 3.46 (5th among 101)
+  
+\section{EXPERIENCE}   
+  \begin{tabularx}{\resumewidth}{ s b d }
+    \textbf{Graduate Researcher} & 
+    \centering \textbf{University of California, Santa Barbara} &  
+    \textbf{June 2018 - Present}
+  \end{tabularx}	
+  \begin{itemize}
+    \item Focus on embedded operating systems and runtime systems for Internet of Things applications.
+    \item Converted multiple raspberry pi deployments to microcontroller based designs. Reduced idle current consumption from 90 milliamps to 54 microamps. This included the electronic design as well.
+    \item Ported a functions as a service framework to run on microcontrollers, improving a lot of use cases.
+  \end{itemize}
+  
+  \begin{tabularx}{\resumewidth}{ s b d }
+  	\textbf{Teaching Assistant} &
+    \centering \textbf{University of California, Santa Barbara} & 
+    \textbf{Oct 2017 - June 2018}
+  \end{tabularx}	
+  \begin{tabularx}{\resumewidth}{ s b d }
+  	\textbf{} &
+    \centering \textbf{Middle East Technical University} & 
+    \textbf{Sep 2016 - June 2017}
+  \end{tabularx}
+  
+  \begin{tabularx}{\resumewidth}{ s b d }
+    \textbf{Software Engineer, Intern} & 
+    \centering \textbf{WMG, Warwick University, Coventry, UK} &  
+    \textbf{July 2016 - Aug 2016}
+  \end{tabularx}	
+  \begin{itemize}
+    \item Designed and led the implementation of the world's first and only web based HDR (High Dynamic Range) image viewer. I am still leading this project as of June 2017.
+   	\item Implemented hardware video decoding using DXVA2 to utilize the GPU for an HDR video player.
+   	\item Implemented a 3D scene editor for an image based lighting research project.
+  \end{itemize}
+  
+  \begin{tabularx}{\resumewidth}{ s b d }
+    \textbf{Software Engineer, Intern} & 
+    \centering \textbf{TaleWorlds Entertainment, Ankara, TR} & 
+    \textbf{June 2015 - July 2015}
+  \end{tabularx}
+  \begin{itemize}			
+    \item Enhanced compilation and iteration times from minutes to seconds by designing and implementing a data-driven asset loader, which used to be hardcoded into the program.
+    \item Implemented a profiler for the multiplayer game server to track bottlenecks.
+  \end{itemize}
+
+\section{PUBLICATIONS} 
+\begin{enumerate}
+    \item \href{https://dl.acm.org/citation.cfm?id=3277607}{C. Krintz, R. Wolski, N. Golubovic, and F. Bakir, “Estimating Outdoor Temperature from CPU Temperature for IoT Applications in Agriculture,” p. 8., IoT-2018}
+\end{enumerate}
+
+\section{PROJECTS}
+  \textbf{Tos} \href{http://github.com/FatihBAKIR/tos}{\texttt{github.com/FatihBAKIR/tos}}, \href{http://fatihbakir.net/tos/}{\texttt{fatihbakir.net/tos}} \\
+  Tos is a modern and portable embedded operating system written in modern C++ for IoT. It runs on AVR, ARM, xtensa controllers. It provides high level, zero cost and modern C++ idioms even on 8 bit mcus. It makes heavy use of inlining, compile time programming and linker optimizations to generate very efficient binaries. It consistently generates smaller binaries than comparable systems such as FreeRTOS and Riot. \blfootnote{Source code for some of these projects is not publicly available yet, but I'd be happy to discuss and share them privately.}
+  
+  \textbf{Tvm} \href{http://github.com/FatihBAKIR/tvm}{\texttt{github.com/FatihBAKIR/tvm}}, \href{http://fatihbakir.net/tvm}{\texttt{fatihbakir.net/tvm}} \\
+  Tvm is a highly customizeable bytecode VM library for embedded systems. It's implemented using heavy template metaprogramming to generate very efficient interpreters for extremely compact byte code programs. The users of the library create their own virtual machine by defining their state and instructions using a compile time list, and Tvm handles decoding and dispatching instructions. It also generates a recursive descent based assembler from a VM description.
+  
+  %\textbf{Wireless Link Layer} \\
+  %I've developed a reliable link layer for 2.4 GHz transceivers such as nRF24L01s. It's mainly focused on conserving energy with synchronized sleeps. I've used a polling based TDMA strategy to prevent collisions. 
+ 
+  \textbf{OpenHDR} \texttt{\href{https://openhdr.org}{openhdr.org}}, \texttt{\href{http://fatihbakir.net/\#openhdr}{fatihbakir.net/\#openhdr}} \\
+  I am leading the development of the worlds first and only online HDR image viewer. By using modern web technologies such as WebGL and Emscripten, we are capable of rendering HDR images on the client side effectively. We are using C++ for the HDR format handling and TypeScript as the general scripting language. This project has around 1000 monthly unique users.
+  
+  \iffalse
+  \textbf{E2EHDR} \texttt{\href{http://fatihbakir.net/\#e2ehdr}{fatihbakir.net/\#e2ehdr}} \\
+  E2EHDR is my senior design project which is a real time end to end HDR video solution. We are using two heteregeneous regular cameras to acquire video streams with different exposures. We are using GPGPU methods to align the different frames and generate HDR images. At the end of the pipeline, we have a custom built display solution that is capable of displaying HDR content. C++ and GLSL. This project won 4th place among 27 projects in graduation projects contest.
+  \fi
+  
+\section{LANGUAGES \& TECHNOLOGIES}
+	C++, C, C\#, TypeScript, Python, PHP\\
+  	STL, Boost, Kernel, Git, CMake, C++ Metaprogramming
+ 
+\section{HONORS \& FELLOWSHIPS} 
+\begin{itemize}
+    \item 2017 Holbrook Foundation Energy Efficiency Fellow
+    \item High honor standing in the \textit{2014 spring} (3.66), \textit{2015 fall} (4.00), \textit{2016 fall} (3.81), \textit{2016 spring} (3.84) semesters. Honor standing in the 2015 spring semester (GPA 3.45/4.00). Top of the school in 2015 fall semester with GPA 4.00/4.00
+    \item Golden medal from local finals, and honorable mention at the national finals from the 2012 TUBITAK projects contest. (BIDEB - 2204)
+\end{itemize}
+\end{resume}
+
+\end{document}
+
+
+
+
+
+
+
+
+
